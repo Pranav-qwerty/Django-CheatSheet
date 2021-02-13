@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/static/prism.js"></script>
+    <link rel="stylesheet" href="/static/prism.css">
+    <link rel="stylesheet" href="/static/style.css">
+    <title>Cheatsheet Template by Pranav Tripathi</title>
+</head>
+<body>
+    <nav class="navbar">
+        <span class="logo"><img src="/static/cheatsheet.png" style="width: 60px;" alt="Logo"></span>
+        <div class="content center">Django Cheatsheet</div>
+    </nav>
+    <div class="container">
+        <ol>
+            <li>
+                Adding Static files
+                <pre class="language-python"><code>STATICFILES_DIRS = [
+    BASE_DIR / "static",
+]</code></pre>
+            </li>
+            <li>
+                Adding Templates files
+                <pre class="language-python"><code>BASE_DIR / "templates"</code></pre>
+            </li>
+            <li>
+                Views.py starter template
+                <pre class="language-python"><code>from django.shortcuts import render, HttpResponse
+
+# Create your views here.
+def index(requests):
+    return HttpResponse("Hai this is a test")</code></pre>
+            </li>
+            <li>
+                App urls.py starter template
+                <pre class="language-python"><code>from django.urls import path
+from . import views
+
+urlpatterns = [
+    path('', views.index, name="home")
+]</code></pre>
+            </li>
+            <li>
+                Project urls.py starter template
+                <pre class="language-python"><code>from django.contrib import admin
+from django.urls import path, include
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', include("app.urls")),
+]</code></pre>
+            </li>
+        </ol>
+    </div>
+</body>
+</html>
